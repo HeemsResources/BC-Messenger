@@ -12,9 +12,11 @@ public Status(String Freshman, String Sophomore, String Junior, String Senior, S
   this.Senior=Senior;
   this.major=major;
 }
+
 public String setmajor(String major){
   return this.major;
 }
+
 public String getmajor(String major){
     return this.major;
 }
