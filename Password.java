@@ -1,10 +1,10 @@
 public class Password {
 
-  private String password;
+      private String password;
 
-  public Password(){
-    this.password = generateRandomPassword(20);
-  }
+      public Password() {
+            this.password = generateRandomPassword(20);
+      }
 
   private String generateRandomPassword(int length){
     String passwordSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%";
@@ -15,47 +15,48 @@ public class Password {
     }
     return new String(password);
   }gi
-  private void changePassword(String newPword){
-    System.out.println("Password must contain at least 8 characters");
-    System.out.println("Enter new password: ");
-    password=newPword;
-    verifyPassword(password);
-  }
-  public void verifyPassword(String password){
-    boolean verify=false;
-    int length=password.length();
-    boolean hasDigit= false;
-    boolean hasLetter=false;
-    while(verify){
-      if(length>=8){
-        for(int i=0;i<length;i++){
-          char x= password.charAt(i);
-          if(Character.isLetter(x)){
-            hasLetter=true;
-        }
-          if(Character.isDigit(x)){
-            hasDigit=true;
 
-        }
-        if(hasDigit&&hasLetter){
-          break;
-        }
+      private void changePassword(String newPword) {
+            System.out.println("Password must contain at least 8 characters");
+            System.out.println("Enter new password: ");
+            password = newPword;
+            verifyPassword(password);
       }
 
+      public void verifyPassword(String password) {
+            boolean verify = false;
+            int length = password.length();
+            boolean hasDigit = false;
+            boolean hasLetter = false;
+            while (verify) {
+                  if (length >= 8) {
+                        for (int i = 0; i < length; i++) {
+                              char x = password.charAt(i);
+                              if (Character.isLetter(x)) {
+                                    hasLetter = true;
+                              }
+                              if (Character.isDigit(x)) {
+                                    hasDigit = true;
+
+                              }
+                              if (hasDigit && hasLetter) {
+                                    break;
+                              }
+                        }
+
+                  }
+                  if (hasDigit && hasLetter) {
+                        System.out.println("Strong Password");
+                        verify = true;
+                  } else {
+                        System.out.println("WEAK Password");
+                        changePassword(password);
+                  }
+            }
       }
-     if(hasDigit&&hasLetter){
-       System.out.println("Strong Password");
-       verify=true;
-     }
-     else{
-          System.out.println("WEAK Password");
-      changePassword(password);
-    }
-    }
-  }
 
-  public String toString(){
-    return password;
-  }
+      public String toString() {
+            return password;
+      }
 
- }
+}
