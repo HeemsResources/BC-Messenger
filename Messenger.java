@@ -25,16 +25,17 @@ public class Messenger {
       }
 
       public static void logIn(String username, String password) {
+      
       }
 
       public static void signUp(String username, String password) {
 
       }
 
-   public Messeger(String receive, String sent){
-     this.receive=receive;
-     this.sent=sent;
-   }
+      public Messeger(String receive, String sent){
+            this.receive=receive;
+            this.sent=sent;
+      }
 
       public String setMesseger(String sent) {
             return this.sent;
